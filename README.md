@@ -1,1 +1,1 @@
-# zunka_config
+# Zunka util
