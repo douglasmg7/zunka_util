@@ -23,5 +23,5 @@ $ mongo zunka -u admin --authenticationDatabase admin -p
 $ mongo zunka -u admin --authenticationDatabase admin -p password
 
 # Run a sql file.
-mongo zunka -u admin --authenticationDatabase admin -p mamuTe5e < test.sql
-mongo zunka -u admin --authenticationDatabase admin -p mamuTe5e < test.sql > out.txt
+mongo zunka -u admin --authenticationDatabase admin -p password < test.sql
+mongo zunka -u admin --authenticationDatabase admin -p password < test.sql > out.txt
