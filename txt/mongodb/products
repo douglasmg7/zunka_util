@@ -1,8 +1,16 @@
 # Find product by id.
-db.products.find({_id: ObjectId("5cb482c63835141ad87ab8e5")}, {}).pretty()
+db.products.find({_id: ObjectId("5f7b73bce2e457f6cd5a1c52")}, {}).pretty()
+
 
 mongo db_name --quiet --eval 'DBQuery.shellBatchSize = 2000; db.users.find({}).limit(2000)' > users.json
 
 # Update stock.
 db.products.find({_id: ObjectId("5f7b737ce2e457f6cd5a1c46")}, {_id: false, storeProductQtd: true, storeProductTitle: true, updatedAt: true}).pretty();
 db.products.updateOne({ _id: ObjectId("5f7b737ce2e457f6cd5a1c46")}, {$set: {storeProductQtd: 0}, $currentDate: {updatedAt: true}});
+
+
+# Update dealer name.
+db.products.updateOne({ _id: ObjectId("5f7b73bce2e457f6cd5a1c52")}, {$set: {dealerName: "Allnations"}, $currentDate: {updatedAt: true}});
+
+# Find dell products with dealer code.
+db.products.find({dealerName: "Dell", dealerProductId: {$exists: true}}, {dealerProductId: true}).pretty()
