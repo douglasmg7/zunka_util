@@ -13,8 +13,8 @@ $ mongoexport --db zunka --collection orders -u admin --authenticationDatabase a
 # Open with atom.io and use the command pretty json prettify.
 
 # Connect to db.
-mongo -u admin --authenticationDatabase admin -p
-mongo -u admin --host vps10092.publiccloud.com.br --port 27017 --authenticationDatabase admin -p
+mongo zunka -u admin --authenticationDatabase admin -p
+mongo zunka -u admin --host vps10092.publiccloud.com.br --port 27017 --authenticationDatabase admin -p
 mongo "mongodb://username:password@host:port/Database"
 mongo "mongodb://admin:xxxx@vps10092.publiccloud.com.br:27017/zunka"
 
