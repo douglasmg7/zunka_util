@@ -17,3 +17,4 @@ db.products.find({dealerName: "Dell", dealerProductId: {$exists: true}}, {dealer
 
 # Update mercadoLivreId
 db.products.updateOne({ _id: ObjectId("5ef60267dfdfea1f71362716")}, {$set: {mercadoLivreId: "MLB1858913996"}, $currentDate: {updatedAt: true}});
+db.products.updateOne({ _id: ObjectId("5ef60267dfdfea1f71362716")}, {$set: {mercadoLivreId: ""}, $currentDate: {updatedAt: true}});
