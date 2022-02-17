@@ -1,0 +1,11 @@
+# Access mongo from docker:
+docker exec -it mongo_zunka bash
+
+# Import db from docker:
+docker exec -i mongo_zunka sh -c 'mongorestore --gzip --archive' < mongodb.gz
+docker exec -i <mongodb container> sh -c 'mongorestore --authenticationDatabase admin -u <user> -p <password> --db <database> --archive' < db.dump
+
+# Export db from docker:
+docker exec <mongodb container> sh -c 'mongodump --archive' > db.dump
+docker exec <mongodb container> sh -c 'mongodump --authenticationDatabase admin -u <user> -p <password> --db <database> --archive' > db.dump
+
