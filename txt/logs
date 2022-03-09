@@ -1,0 +1,2 @@
+# Copy log from server:
+scp -r douglasmg7@vps10092.publiccloud.com.br:/home/douglasmg7/.local/share/zunka/log/zunkasite/debug-zunkasite-2022-03-09.log .
