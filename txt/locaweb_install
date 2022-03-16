@@ -118,7 +118,6 @@ sudo ln -s /home/douglasmg7/code/zunka_util/profile.d/zunka.sh /etc/profile.d/zu
 cd zunka
 npm install
 npm i stylus -g
-npm i pm2 -g
 npm i bower -g
 bower install
  
@@ -188,16 +187,6 @@ $ go install
 
 # Init log, list, xml and dbs.
 $ $GS/zunkasrv/bin/init.sh
-
-# Start server.
-$ npm run update
-
-# Config boot startup.
-$ pm2 startup
-# Run the script.
-
-# Save process list.
-$ pm2 save
 
 # Needed by rust to compile openSSL.
 sudo apt install pkg-config

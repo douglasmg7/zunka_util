@@ -20,14 +20,18 @@ then
     # docker run -d --name zunka_redis -p 6379:6379 -v "/home/douglasmg7/a:/data"  redis:4.0.9 redis-server --save 60 1 --loglevel warning
     docker run -d --name zunka_redis -p 6379:6379 -v $DATA_PATH  redis:4.0.9 redis-server --save 60 1 --loglevel warning
     echo '!!! No data, import backup to new created redis docker'
+    SHOW_DOCKER_REDIS_TIP='True'
 
 # Start zunka_redis container.
 else
-    [[ -z $(docker ps | grep zunka_redis) ]] && echo 'Starting zunka_redis container...' && docker start zunka_redis &>/dev/null
+    [[ -z $(docker ps | grep zunka_redis) ]] && echo 'Starting zunka_redis container...' && docker start zunka_redis &>/dev/null && SHOW_DOCKER_REDIS_TIP='True'
 
 fi
 
-echo "To access redis:"
-echo "  docker exec -it zunka_redis sh"
-echo "  redis-cli"
-echo
+if [[ $SHOW_DOCKER_REDIS_TIP ]]
+then
+    echo "To access redis:"
+    echo "  docker exec -it zunka_redis sh"
+    echo "  redis-cli"
+    echo
+fi
